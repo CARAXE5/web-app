@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment | Imibeyo Barbershop</title>
+    <meta name="description" content="Book your appointment at Imibeyo Barbershop. Choose your preferred service, seat, and time slot for a premium grooming experience.">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Imibeyo <span>Barbershop</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="booking.html" class="nav-link active">Booking</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="background: linear-gradient(45deg, var(--color-navy), #1e3a8a, var(--color-navy)); padding: var(--spacing-md) 0; position: relative; overflow: hidden; color: white; text-align: center;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"30\" height=\"30\" viewBox=\"0 0 30 30\"><circle cx=\"15\" cy=\"15\" r=\"1\" fill=\"%23d4af37\" opacity=\"0.15\"/></svg>'); background-repeat: repeat;"></div>
+        <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: linear-gradient(to right, transparent, var(--color-gold), transparent);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 style="margin-bottom: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Book Your Experience</h1>
+            <p style="color: rgba(255,255,255,0.8); margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">Reserve your seat with our expert barbers and indulge in premium grooming services</p>
+        </div>
+    </section>
+
+    <!-- Booking System -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; margin-bottom: var(--spacing-lg);">
+                Schedule your premium grooming experience with our master barbers. Select your service, choose a barber, pick a convenient time, and we'll take care of the rest.
+            </p>
+            
+            <div class="booking-system-container">
+                <div class="booking-steps">
+                    <div class="booking-step active">
+                        <div class="booking-step-number">1</div>
+                        <div class="booking-step-title">Choose Barber</div>
+                    </div>
+                    <div class="booking-step">
+                        <div class="booking-step-number">2</div>
+                        <div class="booking-step-title">Select Service</div>
+                    </div>
+                    <div class="booking-step">
+                        <div class="booking-step-number">3</div>
+                        <div class="booking-step-title">Pick Date & Time</div>
+                    </div>
+                    <div class="booking-step">
+                        <div class="booking-step-number">4</div>
+                        <div class="booking-step-title">Confirm Details</div>
+                    </div>
+                </div>
+                
+                <div class="booking-content">
+                    <!-- Step 1: Barber Selection -->
+                    <form action="/process_booking.php" method="post" id="booking-form">
+                        <div id="step-1" class="booking-step-content">
+                            <h3 style="margin-bottom: var(--spacing-md); color: var(--color-navy);">Choose Your Preferred Barber</h3>
+                            
+                            <div class="booking-instructions">
+                                Each of our barbers has their own unique skills and specialties. Select the one that best matches your style preferences.
+                            </div>
+                            
+                            <div class="barber-selection">
+                                <div class="barber-option">
+                                    <div class="barber-img">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="barber-name">Chanda Mulenga</div>
+                                    <div class="barber-role">Senior Barber</div>
+                                    <div class="barber-specialty">Classic Cuts</div>
+                                    <div class="barber-specialty">Fades</div>
+                                    <input type="radio" name="barber" value="chanda" style="display: none;">
+                                </div>
+                                
+                                <div class="barber-option">
+                                    <div class="barber-img">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="barber-name">Mukela Zulu</div>
+                                    <div class="barber-role">Style Specialist</div>
+                                    <div class="barber-specialty">Modern Styles</div>
+                                    <div class="barber-specialty">Beard Design</div>
+                                    <input type="radio" name="barber" value="mukela" style="display: none;">
+                                </div>
+                                
+                                <div class="barber-option">
+                                    <div class="barber-img">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="barber-name">Mutale Banda</div>
+                                    <div class="barber-role">Master Barber</div>
+                                    <div class="barber-specialty">Precision Cuts</div>
+                                    <div class="barber-specialty">Hot Towel Shaves</div>
+                                    <input type="radio" name="barber" value="mutale" style="display: none;">
+                                </div>
+                                
+                                <div class="barber-option">
+                                    <div class="barber-img">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="barber-name">Tembo Mwanawasa</div>
+                                    <div class="barber-role">Creative Specialist</div>
+                                    <div class="barber-specialty">Textured Cuts</div>
+                                    <div class="barber-specialty">Hair Design</div>
+                                    <input type="radio" name="barber" value="tembo" style="display: none;">
+                                </div>
+                            </div>
+                            
+                            <div class="booking-action">
+                                <button type="button" class="booking-btn" id="step1-next">Continue <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Service Selection -->
+                        <div id="step-2" class="booking-step-content" style="display: none;">
+                            <h3 style="margin-bottom: var(--spacing-md); color: var(--color-navy);">Select Your Service</h3>
+                            
+                            <div class="booking-instructions">
+                                Choose from our range of premium services. Each service is performed with expert precision and attention to detail.
+                            </div>
+                            
+                            <div class="service-selection">
+                                <div class="service-option">
+                                    <div class="service-info">
+                                        <div class="service-icon">
+                                            <i class="fas fa-cut"></i>
+                                        </div>
+                                        <div class="service-details">
+                                            <h4>Haircut</h4>
+                                            <p>Precision cut with wash and styling</p>
+                                        </div>
+                                    </div>
+                                    <div class="service-meta">
+                                        <div class="service-duration">60 min</div>
+                                        <div class="service-price">150 ZMW</div>
+                                    </div>
+                                    <input type="radio" name="service" value="haircut" style="display: none;">
+                                </div>
+                                
+                                <div class="service-option">
+                                    <div class="service-info">
+                                        <div class="service-icon">
+                                            <i class="fas fa-user-tie"></i>
+                                        </div>
+                                        <div class="service-details">
+                                            <h4>Beard Trim</h4>
+                                            <p>Shape and style your beard</p>
+                                        </div>
+                                    </div>
+                                    <div class="service-meta">
+                                        <div class="service-duration">30 min</div>
+                                        <div class="service-price">80 ZMW</div>
+                                    </div>
+                                    <input type="radio" name="service" value="beard-trim" style="display: none;">
+                                </div>
+                                
+                                <div class="service-option">
+                                    <div class="service-info">
+                                        <div class="service-icon">
+                                            <i class="fas fa-shower"></i>
+                                        </div>
+                                        <div class="service-details">
+                                            <h4>Shave</h4>
+                                            <p>Traditional straight razor shave</p>
+                                        </div>
+                                    </div>
+                                    <div class="service-meta">
+                                        <div class="service-duration">30 min</div>
+                                        <div class="service-price">70 ZMW</div>
+                                    </div>
+                                    <input type="radio" name="service" value="shave" style="display: none;">
+                                </div>
+                                
+                                <div class="service-option">
+                                    <div class="service-info">
+                                        <div class="service-icon">
+                                            <i class="fas fa-gem"></i>
+                                        </div>
+                                        <div class="service-details">
+                                            <h4>Complete Package</h4>
+                                            <p>Haircut, beard trim, and shave</p>
+                                        </div>
+                                    </div>
+                                    <div class="service-meta">
+                                        <div class="service-duration">2 hrs</div>
+                                        <div class="service-price">250 ZMW</div>
+                                    </div>
+                                    <input type="radio" name="service" value="complete" style="display: none;">
+                                </div>
+                            </div>
+                            
+                            <div class="booking-action">
+                                <button type="button" class="booking-btn booking-btn-previous" id="step2-prev"><i class="fas fa-arrow-left"></i> Back</button>
+                                <button type="button" class="booking-btn" id="step2-next">Continue <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Date and Time Selection -->
+                        <div id="step-3" class="booking-step-content" style="display: none;">
+                            <h3 style="margin-bottom: var(--spacing-md); color: var(--color-navy);">Select Date and Time</h3>
+                            
+                            <div class="booking-instructions">
+                                Choose a convenient date and time for your appointment. Note that our barbers have different lunch break schedules.
+                            </div>
+                            
+                            <div class="time-selection">
+                                <div class="date-navigation">
+                                    <div class="current-month">April 2025</div>
+                                    <div class="date-nav-buttons">
+                                        <div class="date-nav-btn"><i class="fas fa-chevron-left"></i></div>
+                                        <div class="date-nav-btn"><i class="fas fa-chevron-right"></i></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="calendar-days">
+                                    <div class="weekday-label">Mon</div>
+                                    <div class="weekday-label">Tue</div>
+                                    <div class="weekday-label">Wed</div>
+                                    <div class="weekday-label">Thu</div>
+                                    <div class="weekday-label">Fri</div>
+                                    <div class="weekday-label">Sat</div>
+                                    <div class="weekday-label">Sun</div>
+                                    
+                                    <!-- First row dates (empty for previous month) -->
+                                    <div class="calendar-date"></div>
+                                    <div class="calendar-date">1</div>
+                                    <div class="calendar-date">2</div>
+                                    <div class="calendar-date">3</div>
+                                    <div class="calendar-date">4</div>
+                                    <div class="calendar-date">5</div>
+                                    <div class="calendar-date">6</div>
+                                    
+                                    <!-- Second row dates -->
+                                    <div class="calendar-date">7</div>
+                                    <div class="calendar-date">8</div>
+                                    <div class="calendar-date">9</div>
+                                    <div class="calendar-date">10</div>
+                                    <div class="calendar-date">11</div>
+                                    <div class="calendar-date">12</div>
+                                    <div class="calendar-date">13</div>
+                                    
+                                    <!-- Third row dates -->
+                                    <div class="calendar-date today selected">14</div>
+                                    <div class="calendar-date">15</div>
+                                    <div class="calendar-date">16</div>
+                                    <div class="calendar-date">17</div>
+                                    <div class="calendar-date">18</div>
+                                    <div class="calendar-date">19</div>
+                                    <div class="calendar-date">20</div>
+                                </div>
+                                
+                                <h4 style="margin: var(--spacing-md) 0; color: var(--color-navy);">Available Time Slots</h4>
+                                
+                                <div class="time-slots-grid">
+                                    <div class="time-slot-option">08:00</div>
+                                    <div class="time-slot-option">09:00</div>
+                                    <div class="time-slot-option">10:00</div>
+                                    <div class="time-slot-option">11:00</div>
+                                    <div class="time-slot-option lunch">12:00 (Lunch)</div>
+                                    <div class="time-slot-option">12:30</div>
+                                    <div class="time-slot-option">13:00</div>
+                                    <div class="time-slot-option">13:30</div>
+                                    <div class="time-slot-option">14:00</div>
+                                    <div class="time-slot-option">15:00</div>
+                                    <div class="time-slot-option unavailable">16:00</div>
+                                    <div class="time-slot-option">17:00</div>
+                                    <div class="time-slot-option">18:00</div>
+                                    <div class="time-slot-option">19:00</div>
+                                </div>
+                                
+                                <input type="hidden" name="appointment_date" id="appointment_date" value="2025-04-14">
+                                <input type="hidden" name="appointment_time" id="appointment_time" value="">
+                            </div>
+                            
+                            <div class="booking-action">
+                                <button type="button" class="booking-btn booking-btn-previous" id="step3-prev"><i class="fas fa-arrow-left"></i> Back</button>
+                                <button type="button" class="booking-btn" id="step3-next">Continue <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Customer Details -->
+                        <div id="step-4" class="booking-step-content" style="display: none;">
+                            <h3 style="margin-bottom: var(--spacing-md); color: var(--color-navy);">Customer Details</h3>
+                            
+                            <div class="booking-instructions">
+                                Please provide your contact details to complete your booking. We'll send a confirmation to your email.
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="full_name">Full Name</label>
+                                    <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Enter your full name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone_number">Phone Number</label>
+                                    <input type="tel" id="phone_number" name="phone_number" class="form-control" placeholder="+260 XX XXX XXXX" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email_address">Email Address</label>
+                                    <input type="email" id="email_address" name="email_address" class="form-control" placeholder="your.email@example.co.zm" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="payment_method">Payment Method</label>
+                                    <select id="payment_method" name="payment_method" class="form-control" required>
+                                        <option value="">Select payment method</option>
+                                        <option value="cash">Cash (Pay at salon)</option>
+                                        <option value="card">Credit/Debit Card</option>
+                                        <option value="mtn">MTN Money</option>
+                                        <option value="airtel">Airtel Money</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group full-width">
+                                    <label for="special_requests">Special Requests (Optional)</label>
+                                    <textarea id="special_requests" name="special_requests" class="form-control" rows="3" placeholder="Any special requests or notes for your appointment"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="booking-summary">
+                                <h4>Booking Summary</h4>
+                                <div class="summary-item">
+                                    <div class="summary-label">Barber:</div>
+                                    <div class="summary-value" id="summary-barber">-</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Service:</div>
+                                    <div class="summary-value" id="summary-service">-</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Date:</div>
+                                    <div class="summary-value" id="summary-date">April 14, 2025</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Time:</div>
+                                    <div class="summary-value" id="summary-time">-</div>
+                                </div>
+                                <div class="summary-item summary-total">
+                                    <div class="summary-label">Total:</div>
+                                    <div class="summary-value" id="summary-price">-</div>
+                                </div>
+                            </div>
+                            
+                            <div class="terms-checkbox">
+                                <input type="checkbox" id="agree_terms" name="agree_terms" required>
+                                <label for="agree_terms">I agree to the <a href="#">Terms and Conditions</a> and understand the <a href="#">Cancellation Policy</a>. I confirm that all the information provided is accurate.</label>
+                            </div>
+                            
+                            <div class="booking-action">
+                                <button type="button" class="booking-btn booking-btn-previous" id="step4-prev"><i class="fas fa-arrow-left"></i> Back</button>
+                                <button type="submit" class="booking-btn">Confirm Booking <i class="fas fa-check"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- AJAX: On form submission, use AJAX to submit the booking details to the database -->
+                        <!-- AJAX: Display a confirmation message and a dynamically generated receipt -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Policies -->
+    <section class="section" style="position: relative; padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+        <!-- Premium textured background -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #f5f5f5 25%, #f8f8f8 25%, #f8f8f8 50%, #f5f5f5 50%, #f5f5f5 75%, #f8f8f8 75%, #f8f8f8 100%); background-size: 20px 20px; opacity: 0.5; z-index: -2;"></div>
+        
+        <!-- Overlay gradient -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); z-index: -1;"></div>
+        
+        <!-- Gold accents -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, transparent, var(--color-gold), transparent);"></div>
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, transparent, var(--color-gold), transparent);"></div>
+        
+        <div class="container" style="text-align: center; position: relative;">
+            <h2 class="section-title">Booking Policies</h2>
+            <div class="policies-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+                    <h3>Cancellation Policy</h3>
+                    <p>We understand that plans can change. Please give us at least 24 hours notice if you need to cancel or reschedule your appointment. Late cancellations or no-shows may result in a cancellation fee.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Arrival Time</h3>
+                    <p>Please arrive 10 minutes before your scheduled appointment time. This allows you to check in, relax, and prepare for your service. If you arrive late, your service may need to be adjusted or rescheduled.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Payment Methods</h3>
+                    <p>We accept cash, all major credit cards, mobile money transfers (MTN Money, Airtel Money), and bank transfers. Payment is due at the time of service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">Imibeyo <span>Barbershop</span></div>
+                    <p class="footer-text">Premium grooming services for the modern gentleman. Experience exceptional haircuts, beard trims, and shaves in our stylish and comfortable environment.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="index.html">Home</a></li>
+                        <li class="footer-link"><a href="services.html">Services</a></li>
+                        <li class="footer-link"><a href="booking.html">Booking</a></li>
+                        <li class="footer-link"><a href="about.html">About</a></li>
+                        <li class="footer-link"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--color-gold);"></i> +260 97 1234567</li>
+                        <li class="footer-link"><i class="fas fa-envelope" style="margin-right: 8px; color: var(--color-gold);"></i> info@imibeyo.co.zm</li>
+                        <li class="footer-link"><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--color-gold);"></i> 45 Cairo Road, Northmead<br>Lusaka, Zambia</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Hours</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link">Monday - Friday: 8:00 - 20:00</li>
+                        <li class="footer-link">Saturday: 9:00 - 18:00</li>
+                        <li class="footer-link">Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Imibeyo Barbershop. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript to handle the booking form -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Store data for the booking
+        let bookingData = {
+            barber: '',
+            service: '',
+            date: '2025-04-14', // Default date
+            time: '',
+            price: 0
+        };
+
+        // References to steps
+        const steps = {
+            step1: document.getElementById('step-1'),
+            step2: document.getElementById('step-2'),
+            step3: document.getElementById('step-3'),
+            step4: document.getElementById('step-4')
+        };
+
+        // References to step indicators
+        const stepIndicators = document.querySelectorAll('.booking-step');
+
+        // Next and previous buttons
+        const step1Next = document.getElementById('step1-next');
+        const step2Prev = document.getElementById('step2-prev');
+        const step2Next = document.getElementById('step2-next');
+        const step3Prev = document.getElementById('step3-prev');
+        const step3Next = document.getElementById('step3-next');
+        const step4Prev = document.getElementById('step4-prev');
+
+        // Barber selection options
+        const barberOptions = document.querySelectorAll('.barber-option');
+        
+        // Service selection options
+        const serviceOptions = document.querySelectorAll('.service-option');
+        
+        // Calendar date options
+        const calendarDates = document.querySelectorAll('.calendar-date');
+        
+        // Time slot options
+        const timeSlotOptions = document.querySelectorAll('.time-slot-option');
+        
+        // Summary elements
+        const summaryBarber = document.getElementById('summary-barber');
+        const summaryService = document.getElementById('summary-service');
+        const summaryDate = document.getElementById('summary-date');
+        const summaryTime = document.getElementById('summary-time');
+        const summaryPrice = document.getElementById('summary-price');
+
+        // Form elements
+        const bookingForm = document.getElementById('booking-form');
+        
+        // Add event listeners to barber options
+        barberOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                barberOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Update the hidden input
+                this.querySelector('input[type="radio"]').checked = true;
+                
+                // Update booking data
+                bookingData.barber = this.querySelector('.barber-name').textContent;
+                
+                // Update summary
+                summaryBarber.textContent = bookingData.barber;
+            });
+        });
+        
+        // Add event listeners to service options
+        serviceOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                serviceOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Update the hidden input
+                this.querySelector('input[type="radio"]').checked = true;
+                
+                // Update booking data
+                bookingData.service = this.querySelector('.service-details h4').textContent;
+                bookingData.price = this.querySelector('.service-price').textContent;
+                
+                // Update summary
+                summaryService.textContent = bookingData.service;
+                summaryPrice.textContent = bookingData.price;
+            });
+        });
+        
+        // Add event listeners to calendar dates
+        calendarDates.forEach(date => {
+            if (date.textContent) { // Skip empty dates
+                date.addEventListener('click', function() {
+                    // Remove selected class from all dates
+                    calendarDates.forEach(d => d.classList.remove('selected'));
+                    
+                    // Add selected class to clicked date
+                    this.classList.add('selected');
+                    
+                    // Update booking data with the selected date
+                    const day = this.textContent.trim();
+                    const month = 'April'; // Hard-coded for demo
+                    const year = '2025'; // Hard-coded for demo
+                    
+                    // Update appointment_date input
+                    document.getElementById('appointment_date').value = `2025-04-${day.padStart(2, '0')}`;
+                    
+                    // Update booking data
+                    bookingData.date = `${month} ${day}, ${year}`;
+                    
+                    // Update summary
+                    summaryDate.textContent = bookingData.date;
+                });
+            }
+        });
+        
+        // Add event listeners to time slots
+        timeSlotOptions.forEach(slot => {
+            if (!slot.classList.contains('unavailable') && !slot.classList.contains('lunch')) {
+                slot.addEventListener('click', function() {
+                    // Remove selected class from all slots
+                    timeSlotOptions.forEach(s => s.classList.remove('selected'));
+                    
+                    // Add selected class to clicked slot
+                    this.classList.add('selected');
+                    
+                    // Update appointment_time input
+                    document.getElementById('appointment_time').value = this.textContent.trim().split(' ')[0];
+                    
+                    // Update booking data
+                    bookingData.time = this.textContent.trim().split(' ')[0];
+                    
+                    // Update summary
+                    summaryTime.textContent = bookingData.time;
+                });
+            }
+        });
+
+        // Navigation between steps
+        function goToStep(stepNumber) {
+            // Hide all steps
+            Object.values(steps).forEach(step => step.style.display = 'none');
+            
+            // Reset all step indicators
+            stepIndicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Show the target step
+            steps[`step${stepNumber}`].style.display = 'block';
+            
+            // Update step indicator
+            for (let i = 0; i < stepNumber; i++) {
+                stepIndicators[i].classList.add('active');
+            }
+            
+            // Scroll to top of booking container
+            document.querySelector('.booking-system-container').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Step 1 navigation
+        step1Next.addEventListener('click', function() {
+            // Validate barber selection
+            if (!bookingData.barber) {
+                alert('Please select a barber before continuing');
+                return;
+            }
+            
+            goToStep(2);
+        });
+
+        // Step 2 navigation
+        step2Prev.addEventListener('click', function() {
+            goToStep(1);
+        });
+        
+        step2Next.addEventListener('click', function() {
+            // Validate service selection
+            if (!bookingData.service) {
+                alert('Please select a service before continuing');
+                return;
+            }
+            
+            goToStep(3);
+        });
+
+        // Step 3 navigation
+        step3Prev.addEventListener('click', function() {
+            goToStep(2);
+        });
+        
+        step3Next.addEventListener('click', function() {
+            // Validate date and time selection
+            if (!bookingData.time) {
+                alert('Please select a time slot before continuing');
+                return;
+            }
+            
+            goToStep(4);
+        });
+
+        // Step 4 navigation
+        step4Prev.addEventListener('click', function() {
+            goToStep(3);
+        });
+
+        // Form submission
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the data to the server
+            // For now, just show an alert
+            alert('Booking submitted successfully! In a real application, this would be sent to the database.');
+            
+            // Reset form for demonstration purposes
+            bookingForm.reset();
+            goToStep(1);
+            
+            // Reset booking data
+            bookingData = {
+                barber: '',
+                service: '',
+                date: '2025-04-14',
+                time: '',
+                price: 0
+            };
+            
+            // Reset selections
+            barberOptions.forEach(opt => opt.classList.remove('selected'));
+            serviceOptions.forEach(opt => opt.classList.remove('selected'));
+            timeSlotOptions.forEach(opt => opt.classList.remove('selected'));
+            
+            // Ensure default date is selected
+            calendarDates.forEach(date => {
+                if (date.textContent.trim() === '14') {
+                    date.classList.add('selected');
+                } else {
+                    date.classList.remove('selected');
+                }
+            });
+            
+            // Reset summary
+            summaryBarber.textContent = '-';
+            summaryService.textContent = '-';
+            summaryDate.textContent = 'April 14, 2025';
+            summaryTime.textContent = '-';
+            summaryPrice.textContent = '-';
+        });
+    });
+    </script>
+</body>
+</html>
